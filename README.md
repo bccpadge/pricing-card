@@ -19,7 +19,7 @@ This is a solution to [UI Design Daily - Pricing Card](https://uidesigndaily.com
 
 ## Demo
 
-- Live Website URL: [Github Pages]()
+- Live Website URL: [Github Pages](https://bccpadge.github.io/pricing-card/)
 
 ## My process
 
