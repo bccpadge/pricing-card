@@ -134,18 +134,6 @@ button {
   position: relative;
 }
 
-.card__effect {
-  --_clr-bkg: 216 83% 95%;
-  content: "";
-  position: absolute;
-  background-color: hsl(var(--_clr-bkg));
-  width: 26.1875rem;
-  height: 31.25rem;
-  z-index: -1;
-  transform: rotate(8.816deg);
-  border-radius: var(--_card-radius);
-}
-
 .card {
   border-radius: var(--_card-radius);
   overflow: hidden;
@@ -215,6 +203,18 @@ button {
 @media (min-width: 50em) {
   body {
     margin-inline: 0;
+  }
+
+  .card__effect {
+    --_clr-bkg: 216 83% 95%;
+    content: "";
+    position: absolute;
+    background-color: hsl(var(--_clr-bkg));
+    width: 26.1875rem;
+    height: 31.25rem;
+    z-index: -1;
+    transform: rotate(8.816deg);
+    border-radius: var(--_card-radius);
   }
   .card__bottom-group {
     --_spacing-lg: 2.5rem;
