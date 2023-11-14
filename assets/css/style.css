@@ -1,0 +1,222 @@
+/* !css variables */
+:root {
+  --clr-dark-blue: 210 65% 24%;
+  --clr-bkg: 216 100% 98%;
+  --clr-white: 0 0% 100%;
+
+  --fs-400: 1.5rem;
+  --fs-500: 2rem;
+  --fw-600: 600;
+  --fw-700: 700;
+  --ff-body: "Mulish", sans-serif;
+
+  --spacing-400: 1rem;
+}
+
+/* !reset */
+/* !Box sizing rules */
+*,
+*:before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* !Remove defaut margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+/* !Remove list styles on ul, ol elements* with class */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* !Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* !Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* !A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* !Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  font-style: italic;
+}
+
+/* !Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* !Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* !sometimes referred to as .sr-only */
+.visually-hidden:not(:focus):not(:active):not(:focus-within) {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+*:focus-visible {
+  outline: 3px dotted hsl(var(--clr-dark-blue));
+  outline-offset: 0.3125rem;
+}
+
+/* !general styles */
+body {
+  font-size: 1rem;
+  font-family: var(--ff-body);
+  display: grid;
+  place-content: center;
+  background-color: hsl(var(--clr-bkg));
+  margin-inline: var(--spacing-400);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* !utility classes */
+.flex {
+  display: flex;
+  gap: var(--_gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--_gap, 1rem);
+}
+
+/* !card styles */
+.card__container {
+  --_card-radius: 1rem;
+  position: relative;
+}
+
+.card__effect {
+  --_clr-bkg: 216 83% 95%;
+  content: "";
+  position: absolute;
+  background-color: hsl(var(--_clr-bkg));
+  width: 26.1875rem;
+  height: 31.25rem;
+  z-index: -1;
+  transform: rotate(8.816deg);
+  border-radius: var(--_card-radius);
+}
+
+.card {
+  border-radius: var(--_card-radius);
+  overflow: hidden;
+  max-width: 25rem;
+}
+
+.card__top-group {
+  --_spacing-md: 1.5625rem;
+  background-color: hsl(var(--clr-dark-blue));
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--_spacing-md);
+}
+
+.card__top-title {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-600);
+  color: hsl(var(--clr-white));
+  align-self: flex-end;
+}
+
+.card__bottom-group {
+  --_spacing-lg: 1.25rem;
+  --_gap: 1.5rem;
+  background-color: hsl(var(--clr-white));
+  padding: var(--_spacing-lg);
+}
+
+.card__bottom-title {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-600);
+}
+
+.card__bottom-title span {
+  text-transform: uppercase;
+}
+
+.card__bottom-description {
+  font-size: clamp(0.9375rem, 4.5vw, 1.25rem);
+  line-height: normal;
+  opacity: 0.8;
+}
+
+/* !button styles */
+.button {
+  --_btn-radius: 4.125rem;
+  --_btn-padding: 1rem;
+  background-color: hsl(var(--clr-dark-blue));
+  color: hsl(var(--clr-white));
+  padding: var(--_btn-padding);
+  border-radius: var(--_btn-radius);
+  box-shadow: 5px 1px 20px 1px hsl(var(--clr-dark-blue));
+}
+
+/* !attribution */
+.attribution {
+  position: fixed;
+  font-size: 0.75rem;
+  inset: auto auto 1em 1em;
+}
+
+.attribution a {
+  color: hsl(var(--clr-dark-blue));
+}
+
+/* !media query */
+@media (min-width: 50em) {
+  body {
+    margin-inline: 0;
+  }
+  .card__bottom-group {
+    --_spacing-lg: 2.5rem;
+  }
+}
